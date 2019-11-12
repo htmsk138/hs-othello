@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Two Player Othello</title>
+	<link rel="stylesheet" type="text/css" href="css/main.min.css">
+</head>
+<body>
+	<div id="app">
+		<h1>Two Player Othello</h1>
+
+		<p class="counts">
+			<span v-for="(count, index) in counts">
+				{{ stones[index] }}: {{ count }}&nbsp;
+			</span>
+			<span class="result" v-if="isGameOver">{{ result }}</span>
+		</p>
+
+		<p class="player">
+			{{ currentStone }} is playing.
+		</p>
+
+		<div class="board">
+			<div class="cell" v-for="(cell, index) in cells" v-on:click="play(index)">{{ cell }}</div>
+		</div>
+	</div>
+
+	<p class="copyright">
+    By <a href="https://hitomiseki.com" target="_blank" rel="noopener">Hitomi Seki</a>
+  </p>
+
+	<script src="js/vendor/vue.min.js"></script>
+	<script src="js/main.min.js"></script>
+</body>
+</html>

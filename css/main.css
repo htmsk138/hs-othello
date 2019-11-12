@@ -1,0 +1,65 @@
+body {
+  font-family: verdana;
+  font-size: 14px;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  border: 1px solid #000;
+  background: #fff;
+  padding: 0.5em 1em;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+#app {
+  margin: 0 auto;
+  max-width: 500px;
+  width: 90%;
+}
+
+.counts {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.result {
+  color: red;
+}
+
+.board {
+  border: 1px solid #777;
+  box-sizing: content-box;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1px;
+  max-width: 500px;
+}
+
+.cell {
+  border: 1px solid #777;
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  font-size: 24px;
+  font-weight: bold;
+  height: 62.5px;
+  line-height: 62.5px;
+  text-align: center;
+  width: 62.5px;
+}
+
+@media (max-width: 555px) {
+  .cell {
+    flex-basis: 11.25vw;
+    height: 11.25vw;
+    line-height: 11.25vw;
+  }
+}
+
+.copyright {
+  text-align: center;
+}
