@@ -168,6 +168,16 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         }
         return true;
+      },
+      /**
+       * Start a new game.
+       */
+      startNewGame: function() {
+        if(confirm('Start new game?')) {
+          resetGameData();
+          Object.assign(this.$data, gameData);
+          placeInitialStones();
+        }
       }
     },
     computed: {

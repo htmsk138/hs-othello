@@ -1,38 +1,25 @@
-body {
-  font-family: verdana;
-  font-size: 14px;
-  margin: 0;
-}
-
-a {
-  color: inherit;
-}
-
-button {
-  border: 1px solid #000;
-  background: #fff;
-  padding: 0.5em 1em;
-  font-family: inherit;
-  font-size: inherit;
-}
-
-#app {
-  margin: 0 auto;
-  max-width: 500px;
-  width: 90%;
+.status {
+  align-items: center;
+  display: flex;
 }
 
 .counts {
-  font-size: 18px;
   font-weight: bold;
+  margin-right: .5em;
+}
+
+.player {
+  flex: 1 1 auto;
 }
 
 .result {
   color: red;
+  flex: 1 1 auto;
+  font-weight: bold;
 }
 
 .board {
-  border: 1px solid #777;
+  border: 1px solid #000;
   box-sizing: content-box;
   display: flex;
   flex-wrap: wrap;
@@ -41,25 +28,35 @@ button {
 }
 
 .cell {
-  border: 1px solid #777;
+  align-items: center;
+  border: 1px solid #000;
   box-sizing: border-box;
-  flex: 0 0 auto;
+  display: flex;
+  flex: 1 0 calc(100% / 8);
+  justify-content: center;
+  line-height: 0;
+  padding: 0;
+}
+
+.cell:active {
+  background: inherit;
+  color: inherit;
+}
+
+.cell::after {
+  content: '';
+  display: block;
+  padding-bottom: 100%;
+}
+
+.stone {
   font-size: 24px;
   font-weight: bold;
-  height: 62.5px;
-  line-height: 62.5px;
   text-align: center;
-  width: 62.5px;
 }
 
 @media (max-width: 555px) {
-  .cell {
-    flex-basis: 11.25vw;
-    height: 11.25vw;
-    line-height: 11.25vw;
+  .stone {
+    font-size: 5vw;
   }
-}
-
-.copyright {
-  text-align: center;
 }

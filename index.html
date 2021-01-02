@@ -4,26 +4,28 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Two Player Othello</title>
-	<link rel="stylesheet" type="text/css" href="css/hs-app.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/htmsk138/hs-app-css@v1.0/dist/hs-app.min.css">
 	<link rel="stylesheet" type="text/css" href="css/hs-othello.min.css">
 </head>
 <body>
 	<div id="app">
-		<h1>Two Player Othello</h1>
+		<div class="container">
+			<h1>Two Player Othello</h1>
 
-		<p class="counts">
-			<span v-for="(count, index) in counts">
-				{{ stones[index] }}: {{ count }}&nbsp;
-			</span>
-			<span class="result" v-if="isGameOver">{{ result }}</span>
-		</p>
+			<p class="status">
+				<span v-for="(count, index) in counts" class="counts">
+					{{ stones[index] }}: {{ count }}
+				</span>
+				<span class="result" v-if="isGameOver">{{ result }}</span>
+				<span class="player" v-if="!isGameOver">
+					{{ currentStone }}'s turn.
+				</span>
+				<button v-on:click="startNewGame()">Reset</button>
+			</p>
 
-		<p class="player">
-			{{ currentStone }} is playing.
-		</p>
-
-		<div class="board">
-			<div class="cell" v-for="(cell, index) in cells" v-on:click="play(index)">{{ cell }}</div>
+			<div class="board">
+				<button class="cell" v-for="(cell, index) in cells" v-on:click="play(index)"><span class="stone">{{ cell }}</span></button>
+			</div>
 		</div>
 	</div>
 
